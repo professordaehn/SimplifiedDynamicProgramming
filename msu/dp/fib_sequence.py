@@ -42,8 +42,9 @@ def fibo_bottom_up(n: int) -> int:
     :param n: the index into the sequence
     :return: The nth Fibonacci number is returned.
     """
-    table.append(1)
-    table.append(1)
-    for i in range(2, n):
+    table.append(0)  # To keep consistent with the 1-based solutions above. Thus,
+    table.append(1)  # Fib1 = 1
+    table.append(1)  # Fib2 = 1
+    for i in range(3, n + 1):
         table.append(table[i - 1] + table[i - 2])
-    return table[n - 1]
+    return table[n]
